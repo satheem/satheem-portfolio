@@ -11,7 +11,7 @@ interface SectionProps {
 
 const Section = ({ id, title, children, setActiveSection }: SectionProps) => {
   const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { amount: 0.5 });
+  const isInView = useInView(ref, { amount: 0.15 });
 
   useEffect(() => {
     if (isInView) {

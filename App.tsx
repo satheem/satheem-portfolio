@@ -13,7 +13,7 @@ const App = () => {
   const [activeSection, setActiveSection] = useState('hero');
 
   return (
-    <div className="bg-[#0D0D0D] text-white font-sans antialiased">
+    <div className="bg-[#0D0D0D] text-white font-sans antialiased overflow-x-hidden">
       <Cursor />
       <Header activeSection={activeSection} />
       <main className="container mx-auto px-6 md:px-12 lg:px-24">

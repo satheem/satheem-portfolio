@@ -66,7 +66,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
   };
 
   return (
-    <section ref={ref} id="hero" className="relative min-h-screen flex items-center justify-center md:justify-start text-center md:text-left overflow-hidden pt-28">
+    <section ref={ref} id="hero" className="relative min-h-screen flex items-center justify-center md:justify-start text-center md:text-left pt-28">
       {/* Background Effects Container */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
         {/* Pulsing Orb */}
@@ -103,7 +103,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
 
         {/* Left & Right Shadow Vignette */}
         <div className="absolute top-0 left-0 h-full w-2/5 bg-gradient-to-r from-[#0D0D0D] to-transparent" />
-        <div className="absolute top-0 right-0 h-full w-2/5 bg-gradient-to-l from-[#0D0D0D] to-transparent" />
+        <div className="absolute top-0 right-0 h-full w-2/f bg-gradient-to-l from-[#0D0D0D] to-transparent" />
       </div>
 
       <motion.div
@@ -116,10 +116,22 @@ const Hero = ({ setActiveSection }: HeroProps) => {
           variants={nameVariants}
           onAnimationComplete={() => setIsNameAnimationComplete(true)}
           className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight"
+          animate={{
+            textShadow: [
+              "0 0 8px rgba(255, 107, 0, 0.3)",
+              "0 0 20px rgba(255, 107, 0, 0.5)",
+              "0 0 8px rgba(255, 107, 0, 0.3)",
+            ]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
         >
           {name.split("").map((char, index) => (
             <motion.span key={index} variants={letterVariants} className="inline-block">
-              {char === " " ? " " : char}
+              {char === " " ? "\u00A0" : char}
             </motion.span>
           ))}
           <motion.span
@@ -131,7 +143,23 @@ const Hero = ({ setActiveSection }: HeroProps) => {
             |
           </motion.span>
         </motion.h1>
-        <motion.h2 variants={itemVariants} className="text-lg sm:text-2xl md:text-3xl font-light text-[#B3B3B3]">
+        <motion.h2 
+          variants={itemVariants} 
+          className="text-lg sm:text-2xl md:text-3xl font-light text-[#B3B3B3]"
+          animate={{
+             textShadow: [
+              "0 0 4px rgba(255, 255, 255, 0.1)",
+              "0 0 12px rgba(255, 255, 255, 0.2)",
+              "0 0 4px rgba(255, 255, 255, 0.1)",
+            ]
+          }}
+           transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5
+          }}
+        >
           Full Stack Developer crafting modern web apps
         </motion.h2>
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
