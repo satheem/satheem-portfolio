@@ -28,7 +28,7 @@ const About = ({ setActiveSection }: AboutProps) => {
           viewport={{ once: true, amount: 0.5 }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            src="https://c4everything.com/img/team/satheem.svg" 
             alt="Satheem Muwaffaq"
             className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-[#2A2A2A] shadow-lg hover:border-[#FF6B00] transition-colors duration-300"
           />
