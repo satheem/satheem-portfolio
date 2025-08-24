@@ -16,7 +16,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <motion.div
-      className="relative rounded-lg overflow-hidden border border-[#2A2A2A] group h-80 flex flex-col justify-end hover:border-[#FF6B00] hover:shadow-2xl hover:shadow-[#FF6B00]/10"
+      className="relative rounded-lg overflow-hidden border border-[#2A2A2A] group min-h-[20rem] flex flex-col justify-end hover:border-[#FF6B00] hover:shadow-2xl hover:shadow-[#FF6B00]/10"
       variants={cardVariants}
       whileHover={{ y: -8 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}

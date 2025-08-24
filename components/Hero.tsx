@@ -66,7 +66,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
   };
 
   return (
-    <section ref={ref} id="hero" className="relative min-h-screen flex items-center justify-start text-left overflow-hidden">
+    <section ref={ref} id="hero" className="relative min-h-screen flex items-center justify-center md:justify-start text-center md:text-left overflow-hidden">
       {/* Background Effects Container */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
         {/* Binary Rain Effect */}
@@ -102,7 +102,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
         <motion.h1
           variants={nameVariants}
           onAnimationComplete={() => setIsNameAnimationComplete(true)}
-          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight"
+          className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight"
         >
           {name.split("").map((char, index) => (
             <motion.span key={index} variants={letterVariants} className="inline-block">
@@ -118,10 +118,10 @@ const Hero = ({ setActiveSection }: HeroProps) => {
             |
           </motion.span>
         </motion.h1>
-        <motion.h2 variants={itemVariants} className="text-xl sm:text-2xl md:text-3xl font-light text-[#B3B3B3]">
+        <motion.h2 variants={itemVariants} className="text-lg sm:text-2xl md:text-3xl font-light text-[#B3B3B3]">
           Full Stack Developer crafting modern web apps
         </motion.h2>
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
           <a
             href="/resume.pdf"
             download

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Section from './Section';
 import { motion, type Variants } from 'framer-motion';
@@ -33,7 +34,7 @@ const About = ({ setActiveSection }: AboutProps) => {
           />
         </motion.div>
         <motion.div 
-          className="md:col-span-2 text-xl text-center md:text-left text-[#B3B3B3] leading-relaxed"
+          className="md:col-span-2 text-lg md:text-xl text-center md:text-left text-[#B3B3B3] leading-relaxed"
           variants={textVariants}
           initial="hidden"
           whileInView="visible"

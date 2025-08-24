@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
@@ -31,15 +32,15 @@ const Section = ({ id, title, children, setActiveSection }: SectionProps) => {
     <motion.section
       ref={ref}
       id={id}
-      className="py-24"
+      className="py-16 md:py-24"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="mb-16">
+      <div className="mb-12 md:mb-16">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center font-mono"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center font-mono"
           initial={{ scale: 0.95 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: false, amount: 0.6 }}

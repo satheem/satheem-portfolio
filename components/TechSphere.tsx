@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import Section from './Section';
@@ -41,7 +42,7 @@ const TechSphere = ({ setActiveSection }: TechSphereProps) => {
           >
             <h3 className="text-2xl font-semibold text-center mb-12 text-[#FF8533]">{category}</h3>
             <div
-              className="flex flex-wrap justify-center items-center gap-8 md:gap-12"
+              className="flex flex-wrap justify-center items-center gap-x-6 gap-y-8 md:gap-12"
             >
               {skills.map((skill) => (
                 <motion.div
@@ -61,7 +62,7 @@ const TechSphere = ({ setActiveSection }: TechSphereProps) => {
                       Learning
                     </span>
                   )}
-                  <div className="h-16 w-16 md:h-20 md:w-20 flex items-center justify-center p-2">
+                  <div className="h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 flex items-center justify-center p-2">
                     <img src={skill.icon} alt={`${skill.name} logo`} className="h-full w-full object-contain" />
                   </div>
                 </motion.div>
