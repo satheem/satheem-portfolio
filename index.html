@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satheem Muwaffaq | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Space Grotesk"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Simple scrollbar styling for the new theme */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0D0D0D; /* near-black */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #FF6B00; /* bright orange */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #FF8533; /* lighter warm orange */
+      }
+      /* Hide default cursor */
+      body, a, button {
+        cursor: none;
+      }
+       /* Ensure hoverable elements still show pointer-like behavior with custom cursor */
+      [data-cursor-hoverable] {
+        cursor: none;
+      }
+      /* Binary Rain Animation */
+      @keyframes fall {
+        from { transform: translateY(-100%); }
+        to { transform: translateY(100vh); }
+      }
+      .binary-stream {
+        animation: fall linear infinite;
+        text-shadow: 0 0 5px rgba(255, 107, 0, 0.5); /* Add a subtle glow to the text */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.541.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.12"
+  }
+}
+</script>
+</head>
+  <body class="bg-[#0D0D0D] text-white font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <img src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=1920" style="display:none" alt="preload project 1">
+    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1920" style="display:none" alt="preload project 2">
+    <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=1920" style="display:none" alt="preload project 3">
+    <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=1920" style="display:none" alt="preload project 4">
+  </body>
+</html>
