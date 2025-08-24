@@ -74,7 +74,7 @@ const Cursor = () => {
           x: cursorX,
           y: cursorY,
         }}
-        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] custom-cursor"
       />
       <motion.div
         variants={dotVariants}
@@ -83,7 +83,7 @@ const Cursor = () => {
           x: dotX,
           y: dotY,
         }}
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#FF6B00] pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#FF6B00] pointer-events-none z-[9999] custom-cursor"
       />
     </>
   );

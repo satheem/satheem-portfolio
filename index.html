@@ -53,6 +53,15 @@
         animation: fall linear infinite;
         text-shadow: 0 0 5px rgba(255, 107, 0, 0.5); /* Add a subtle glow to the text */
       }
+      /* Hide custom cursor on touch devices or small screens */
+      @media (pointer: coarse), (max-width: 768px) {
+        body, a, button, [data-cursor-hoverable] {
+          cursor: auto;
+        }
+        .custom-cursor {
+          display: none !important;
+        }
+      }
     </style>
   <script type="importmap">
 {

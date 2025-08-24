@@ -98,14 +98,14 @@ const Hero = ({ setActiveSection }: HeroProps) => {
         animate="visible"
         className="space-y-6 max-w-3xl"
       >
-        <motion.h1 variants={nameVariants} className="text-5xl md:text-7xl font-bold tracking-tight">
+        <motion.h1 variants={nameVariants} className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
           {name.split("").map((char, index) => (
             <motion.span key={index} variants={letterVariants} className="inline-block">
               {char === " " ? " " : char}
             </motion.span>
           ))}
         </motion.h1>
-        <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl font-light text-[#B3B3B3]">
+        <motion.h2 variants={itemVariants} className="text-xl sm:text-2xl md:text-3xl font-light text-[#B3B3B3]">
           Full Stack Developer crafting modern web apps
         </motion.h2>
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
