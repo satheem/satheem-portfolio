@@ -70,8 +70,8 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { name: 'Email', icon: React.createElement(Mail, { className: 'w-6 h-6' }), url: 'mailto:satheem.muwaffaq@example.com' },
+  { name: 'Email', icon: React.createElement(Mail, { className: 'w-6 h-6' }), url: 'mailto:satheem511@gmail.com' },
   { name: 'GitHub', icon: React.createElement(Github, { className: 'w-6 h-6' }), url: 'https://github.com/satheem' },
   { name: 'LinkedIn', icon: React.createElement(Linkedin, { className: 'w-6 h-6' }), url: 'https://linkedin.com/in/satheem' },
-  { name: 'Instagram', icon: React.createElement(Instagram, { className: 'w-6 h-6' }), url: 'https://instagram.com/satheem' },
+  { name: 'Instagram', icon: React.createElement(Instagram, { className: 'w-6 h-6' }), url: 'https://instagram.com/satheem.co' },
 ];

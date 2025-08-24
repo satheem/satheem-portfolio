@@ -15,7 +15,7 @@ const Contact = ({ setActiveSection }: ContactProps) => {
           I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out to me.
         </p>
         <motion.a
-          href="mailto:satheem.muwaffaq@example.com"
+          href="mailto:satheem511@gmail.com"
           className="inline-block bg-gradient-to-r from-[#FF6B00] to-[#FF8533] text-white font-bold text-lg px-8 py-4 rounded-full"
           whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(255, 107, 0, 0.6)' }}
           whileTap={{ scale: 0.95 }}

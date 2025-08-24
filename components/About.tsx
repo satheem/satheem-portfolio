@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from './Section';
-import { motion, type Variants } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface AboutProps {
   setActiveSection: (id: string) => void;

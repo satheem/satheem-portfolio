@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { motion, type Variants } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import type { Project } from '../types';
 import { Github, ExternalLink } from 'lucide-react';
 
