@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useMemo, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { SOCIAL_LINKS } from '../constants';
-import { Download } from 'lucide-react';
+import { Download, Mouse } from 'lucide-react';
 
 interface HeroProps {
   setActiveSection: (id: string) => void;
@@ -69,6 +69,19 @@ const Hero = ({ setActiveSection }: HeroProps) => {
     <section ref={ref} id="hero" className="relative min-h-screen flex items-center justify-center md:justify-start text-center md:text-left overflow-hidden pt-28">
       {/* Background Effects Container */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
+        {/* Pulsing Orb */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[radial-gradient(circle_at_center,_rgba(255,107,0,0.15)_0%,_transparent_60%)]"
+          animate={{
+            transform: ['translate(-50%, -50%) scale(1)', 'translate(-50%, -50%) scale(1.2)', 'translate(-50%, -50%) scale(1)'],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+        />
+
         {/* Binary Rain Effect */}
         <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]">
           {streams.map((stream) => (
@@ -106,7 +119,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
         >
           {name.split("").map((char, index) => (
             <motion.span key={index} variants={letterVariants} className="inline-block">
-              {char === " " ? " " : char}
+              {char === " " ? " " : char}
             </motion.span>
           ))}
           <motion.span
@@ -150,6 +163,25 @@ const Hero = ({ setActiveSection }: HeroProps) => {
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block">
+        <a href="#about" aria-label="Scroll to next section" data-cursor-hoverable>
+            <motion.div
+                className="text-[#B3B3B3] hover:text-white transition-colors"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 2, duration: 0.8 }}
+            >
+                <motion.div
+                    animate={{ y: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                    <Mouse className="w-7 h-7" />
+                </motion.div>
+            </motion.div>
+        </a>
+      </div>
     </section>
   );
 };
