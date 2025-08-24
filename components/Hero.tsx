@@ -66,7 +66,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
   };
 
   return (
-    <section ref={ref} id="hero" className="relative min-h-screen flex items-center justify-center md:justify-start text-center md:text-left overflow-hidden">
+    <section ref={ref} id="hero" className="relative min-h-screen flex items-center justify-center md:justify-start text-center md:text-left overflow-hidden pt-28">
       {/* Background Effects Container */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
         {/* Binary Rain Effect */}
@@ -97,7 +97,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="space-y-6 max-w-3xl"
+        className="space-y-4 md:space-y-6 max-w-3xl"
       >
         <motion.h1
           variants={nameVariants}
@@ -121,7 +121,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
         <motion.h2 variants={itemVariants} className="text-lg sm:text-2xl md:text-3xl font-light text-[#B3B3B3]">
           Full Stack Developer crafting modern web apps
         </motion.h2>
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
           <a
             href="/resume.pdf"
             download
