@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useMemo } from 'react';
+import React, { useEffect, useRef, useMemo, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { SOCIAL_LINKS } from '../constants';
 import { Download } from 'lucide-react';
@@ -15,6 +15,7 @@ const generateBinaryStream = (length = 200) =>
 const Hero = ({ setActiveSection }: HeroProps) => {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { amount: 0.5 });
+  const [isNameAnimationComplete, setIsNameAnimationComplete] = useState(false);
 
   useEffect(() => {
     if (isInView) {
@@ -98,12 +99,24 @@ const Hero = ({ setActiveSection }: HeroProps) => {
         animate="visible"
         className="space-y-6 max-w-3xl"
       >
-        <motion.h1 variants={nameVariants} className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
+        <motion.h1
+          variants={nameVariants}
+          onAnimationComplete={() => setIsNameAnimationComplete(true)}
+          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight"
+        >
           {name.split("").map((char, index) => (
             <motion.span key={index} variants={letterVariants} className="inline-block">
               {char === " " ? " " : char}
             </motion.span>
           ))}
+          <motion.span
+            variants={letterVariants}
+            className="inline-block text-[#FF6B00]"
+            animate={isNameAnimationComplete ? { opacity: [1, 0] } : {}}
+            transition={isNameAnimationComplete ? { duration: 0.6, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' } : {}}
+          >
+            |
+          </motion.span>
         </motion.h1>
         <motion.h2 variants={itemVariants} className="text-xl sm:text-2xl md:text-3xl font-light text-[#B3B3B3]">
           Full Stack Developer crafting modern web apps
