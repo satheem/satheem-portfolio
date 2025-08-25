@@ -15,7 +15,9 @@ const App = () => {
   return (
     <div className="bg-[#0D0D0D] text-white font-sans antialiased overflow-x-hidden">
       <Cursor />
-      <Header activeSection={activeSection} />
+      <Header 
+        activeSection={activeSection} 
+      />
       <main className="container mx-auto px-6 md:px-12 lg:px-24">
         <Hero setActiveSection={setActiveSection} />
         <About setActiveSection={setActiveSection} />

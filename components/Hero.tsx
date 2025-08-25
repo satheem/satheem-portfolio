@@ -146,15 +146,28 @@ const Hero = ({ setActiveSection }: HeroProps) => {
         </motion.h2>
 
         <motion.div variants={itemVariants} className="flex justify-center md:justify-start items-center space-x-6 pt-2">
-          {keySkills.map(skill => (
+          {keySkills.map((skill, i) => (
             <motion.div
               key={skill.name}
               title={skill.name}
+              animate={{
+                filter: [
+                  `drop-shadow(0 0 6px ${skill.color}70)`,
+                  `drop-shadow(0 0 12px ${skill.color}99)`,
+                  `drop-shadow(0 0 6px ${skill.color}70)`,
+                ]
+              }}
               whileHover={{
                 scale: 1.2,
-                filter: `drop-shadow(0 0 10px ${skill.color})`
+                filter: `drop-shadow(0 0 16px ${skill.color})`,
+                transition: { type: 'spring', stiffness: 300, damping: 15 }
               }}
-              transition={{ type: 'spring', stiffness: 300 }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.4
+              }}
               data-cursor-hoverable
             >
               <img src={skill.icon} alt={skill.name} className="h-8 w-8 md:h-9 md:w-9" />
