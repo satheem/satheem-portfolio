@@ -16,43 +16,62 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <motion.div
-      className="relative rounded-lg overflow-hidden border border-[#2A2A2A] group min-h-[20rem] flex flex-col justify-end hover:border-[#FF6B00] hover:shadow-2xl hover:shadow-[#FF6B00]/10"
+      className="group relative h-96 rounded-2xl overflow-hidden border border-[#2A2A2A] hover:border-[#FF6B00] hover:shadow-xl hover:shadow-[#FF6B00]/10"
       variants={cardVariants}
       whileHover={{ y: -8 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
       data-cursor-hoverable
     >
-      <img src={project.image} alt={project.name} className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+      {/* Background Image */}
+      <img 
+        src={project.image} 
+        alt={project.name} 
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" 
+      />
       
-      <div className="relative p-6 flex flex-col">
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent transition-all duration-300 group-hover:from-black/80 group-hover:via-black/50" />
+      
+      {/* Content */}
+      <div className="relative z-10 p-6 flex flex-col h-full justify-end">
         <h3 className="text-2xl font-bold text-white mb-2">{project.name}</h3>
-        <p className="text-[#B3B3B3] mb-4 text-sm line-clamp-2">{project.description}</p>
+        <p className="text-gray-300 mb-4 text-sm line-clamp-2">{project.description}</p>
+        
         <div className="flex flex-wrap gap-2 mb-4">
           {project.techStack.map(tech => (
-            <span key={tech} className="bg-[#2A2A2A]/80 backdrop-blur-sm text-[#FF8533] text-xs font-semibold px-3 py-1 rounded-full">
+            <span key={tech} className="bg-white/10 backdrop-blur-sm text-[#FFDDBB] text-xs font-semibold px-3 py-1 rounded-full">
               {tech}
             </span>
           ))}
         </div>
         
-        {/* Links that appear on hover */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center space-x-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="flex items-center space-x-4">
           {project.liveLink && (
-            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-white hover:text-[#FF6B00] transition-colors duration-300">
-              <ExternalLink className="w-8 h-8 mb-1" />
-              <span className="text-sm font-medium">Live Demo</span>
+            <a 
+              href={project.liveLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-300 hover:text-[#FF6B00] transition-colors duration-300"
+              aria-label="Live Demo"
+              title="Live Demo"
+            >
+              <ExternalLink className="w-6 h-6" />
             </a>
           )}
           {project.githubLink ? (
-            <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-white hover:text-[#FF6B00] transition-colors duration-300">
-              <Github className="w-8 h-8 mb-1" />
-              <span className="text-sm font-medium">GitHub</span>
+            <a 
+              href={project.githubLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-300 hover:text-[#FF6B00] transition-colors duration-300"
+              aria-label="GitHub Repository"
+              title="GitHub Repository"
+            >
+              <Github className="w-6 h-6" />
             </a>
           ) : (
-             <div className="flex flex-col items-center text-gray-400 cursor-not-allowed">
-              <Github className="w-8 h-8 mb-1" />
-              <span className="text-sm font-medium">Coming Soon</span>
+             <div className="text-gray-500 cursor-not-allowed" title="Coming Soon">
+              <Github className="w-6 h-6" />
             </div>
           )}
         </div>

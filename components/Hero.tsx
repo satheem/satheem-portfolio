@@ -2,11 +2,18 @@
 import React, { useEffect, useRef, useMemo, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { SOCIAL_LINKS } from '../constants';
-import { Download, Mouse } from 'lucide-react';
+import { Download, Mouse, ArrowRight } from 'lucide-react';
 
 interface HeroProps {
   setActiveSection: (id: string) => void;
 }
+
+const keySkills = [
+  { name: 'React', icon: 'https://cdn.simpleicons.org/react/61DAFB', color: '#61DAFB' },
+  { name: 'Node.js', icon: 'https://cdn.simpleicons.org/nodedotjs/339933', color: '#339933' },
+  { name: 'Tailwind CSS', icon: 'https://cdn.simpleicons.org/tailwindcss/06B6D4', color: '#06B6D4' },
+  { name: 'MongoDB', icon: 'https://cdn.simpleicons.org/mongodb/47A248', color: '#47A248' },
+];
 
 // Helper function to generate a stream of binary code
 const generateBinaryStream = (length = 200) =>
@@ -71,7 +78,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
       <div className="absolute inset-0 -z-10" aria-hidden="true">
         {/* Pulsing Orb */}
         <motion.div
-          className="absolute top-1/2 left-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[radial-gradient(circle_at_center,_rgba(255,107,0,0.15)_0%,_transparent_60%)]"
+          className="absolute top-1/2 left-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[radial-gradient(circle_at_center,_rgba(255,107,0,0.25)_0%,_rgba(255,165,0,0.1)_30%,_transparent_60%)]"
           animate={{
             transform: ['translate(-50%, -50%) scale(1)', 'translate(-50%, -50%) scale(1.2)', 'translate(-50%, -50%) scale(1)'],
           }}
@@ -116,18 +123,6 @@ const Hero = ({ setActiveSection }: HeroProps) => {
           variants={nameVariants}
           onAnimationComplete={() => setIsNameAnimationComplete(true)}
           className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight"
-          animate={{
-            textShadow: [
-              "0 0 8px rgba(255, 107, 0, 0.3)",
-              "0 0 20px rgba(255, 107, 0, 0.5)",
-              "0 0 8px rgba(255, 107, 0, 0.3)",
-            ]
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
         >
           {name.split("").map((char, index) => (
             <motion.span key={index} variants={letterVariants} className="inline-block">
@@ -146,33 +141,44 @@ const Hero = ({ setActiveSection }: HeroProps) => {
         <motion.h2 
           variants={itemVariants} 
           className="text-lg sm:text-2xl md:text-3xl font-light text-[#B3B3B3]"
-          animate={{
-             textShadow: [
-              "0 0 4px rgba(255, 255, 255, 0.1)",
-              "0 0 12px rgba(255, 255, 255, 0.2)",
-              "0 0 4px rgba(255, 255, 255, 0.1)",
-            ]
-          }}
-           transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.5
-          }}
         >
           Full Stack Developer crafting modern web apps
         </motion.h2>
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+
+        <motion.div variants={itemVariants} className="flex justify-center md:justify-start items-center space-x-6 pt-2">
+          {keySkills.map(skill => (
+            <motion.div
+              key={skill.name}
+              title={skill.name}
+              whileHover={{
+                scale: 1.2,
+                filter: `drop-shadow(0 0 10px ${skill.color})`
+              }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              data-cursor-hoverable
+            >
+              <img src={skill.icon} alt={skill.name} className="h-8 w-8 md:h-9 md:w-9" />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-4 pt-4">
           <a
             href="/resume.pdf"
             download
-            className="group relative inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-[#FF6B00] rounded-full overflow-hidden transition-all duration-300 hover:bg-[#FF8533] w-full sm:w-auto"
+            className="group inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-[#FF6B00] rounded-full transition-all duration-300 hover:bg-[#FF8533] w-full sm:w-auto"
             data-cursor-hoverable
           >
-            <span className="relative flex items-center">
-              <Download className="w-5 h-5 mr-2" />
-              Download CV
-            </span>
+            <Download className="w-5 h-5 mr-2" />
+            Download CV
+          </a>
+          <a
+            href="#projects"
+            className="group inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white border border-white/40 rounded-full transition-all duration-300 hover:border-[#FF6B00] hover:text-[#FF6B00] w-full sm:w-auto"
+            data-cursor-hoverable
+          >
+            View My Work
+            <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
           <div className="flex items-center space-x-4">
             {SOCIAL_LINKS.map(link => (
