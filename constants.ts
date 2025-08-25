@@ -80,13 +80,6 @@ export const FEATURED_PROJECTS: Project[] = [
     techStack: ['PHP', 'MySQL', 'HTML', 'CSS', 'JS'],
     liveLink: 'http://www.alaqsans.com',
   },
-  {
-    name: 'C4Everything Company Website',
-    icon: React.createElement(Building2, { className: 'w-8 h-8 text-[#FF8533]' }),
-    description: 'Developed the official company website, serving as the primary digital presence and information hub for their services.',
-    techStack: ['PHP', 'MySQL', 'HTML', 'CSS', 'JS'],
-    liveLink: 'http://www.c4everything.com',
-  },
 ];
 
 export const OTHER_PROJECTS: OtherProject[] = [
