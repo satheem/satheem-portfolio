@@ -32,7 +32,7 @@ const Section = ({ id, title, children, setActiveSection }: SectionProps) => {
     <motion.section
       ref={ref}
       id={id}
-      className="py-16 md:py-24"
+      className="py-12 md:py-20"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
