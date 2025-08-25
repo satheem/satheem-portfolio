@@ -13,6 +13,7 @@ const keySkills = [
   { name: 'Node.js', icon: 'https://cdn.simpleicons.org/nodedotjs/339933', color: '#339933' },
   { name: 'Tailwind CSS', icon: 'https://cdn.simpleicons.org/tailwindcss/06B6D4', color: '#06B6D4' },
   { name: 'MongoDB', icon: 'https://cdn.simpleicons.org/mongodb/47A248', color: '#47A248' },
+  { name: 'Linux', icon: 'https://cdn.simpleicons.org/linux/FCC624', color: '#FCC624' },
 ];
 
 // Helper function to generate a stream of binary code

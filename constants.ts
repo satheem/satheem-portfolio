@@ -38,6 +38,7 @@ export const SKILL_CATEGORIES: { [key: string]: Skill[] } = {
     { name: 'Git', icon: 'https://cdn.simpleicons.org/git/F05032', color: '#F05032' },
     { name: 'GitHub', icon: 'https://cdn.simpleicons.org/github/FFFFFF', color: '#FFFFFF' },
     { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', color: '#007ACC' },
+    { name: 'Linux', icon: 'https://cdn.simpleicons.org/linux/FCC624', color: '#FCC624' },
   ]
 };
 
