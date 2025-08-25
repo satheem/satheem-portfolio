@@ -11,7 +11,13 @@ export interface Project {
   name: string;
   description: string;
   techStack: string[];
-  image: string;
+  icon: React.ReactElement<{ className?: string }>;
+  liveLink?: string;
+  githubLink?: string;
+}
+
+export interface OtherProject {
+  name: string;
   liveLink?: string;
   githubLink?: string;
 }

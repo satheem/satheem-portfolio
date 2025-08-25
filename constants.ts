@@ -1,10 +1,15 @@
 import React from 'react';
-import type { Project, Skill, SocialLink } from './types';
+import type { Project, OtherProject, Skill, SocialLink } from './types';
 import { 
   Github, 
   Instagram, 
   Linkedin, 
   Mail, 
+  Film,
+  StickyNote,
+  CheckSquare,
+  Bot,
+  School,
 } from 'lucide-react';
 
 export const SKILL_CATEGORIES: { [key: string]: Skill[] } = {
@@ -35,38 +40,52 @@ export const SKILL_CATEGORIES: { [key: string]: Skill[] } = {
   ]
 };
 
-export const PROJECTS: Project[] = [
+export const FEATURED_PROJECTS: Project[] = [
   {
-    name: 'E-Shop Platform',
-    description: 'A modern e-commerce platform with a focus on user experience, featuring product catalogs, a shopping cart, and a secure checkout process.',
-    techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
-    image: 'https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=1920',
-    liveLink: '#',
-    githubLink: 'https://github.com/satheem',
-  },
-  {
-    name: 'ProTask Manager',
-    description: 'A task management application designed for teams to collaborate, track progress, and manage projects efficiently with an intuitive interface.',
-    techStack: ['React', 'PHP', 'MySQL'],
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1920',
-    liveLink: '#',
+    name: 'Movie Search App',
+    icon: React.createElement(Film, { className: 'w-8 h-8 text-[#FF8533]' }),
+    description: 'A movie search app powered by The Movie Database (TMDB) API, allowing users to discover and browse movies.',
+    techStack: ['React', 'Vite', 'TMDB API'],
+    githubLink: 'https://github.com/satheem/movie-app',
   },
   {
-    name: 'Dev-Blog',
-    description: 'A personal blog platform for developers to share articles, tutorials, and insights. Built with a minimalist design and optimized for readability.',
-    techStack: ['React', 'Tailwind CSS', 'Framer Motion'],
-    image: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=1920',
-    liveLink: '#',
-    githubLink: 'https://github.com/satheem',
+    name: 'Note App',
+    icon: React.createElement(StickyNote, { className: 'w-8 h-8 text-[#FF8533]' }),
+    description: 'A modern and intuitive note-taking application with a clean, user-friendly interface for organizing thoughts and ideas.',
+    techStack: ['React', 'Vite', 'Tailwind CSS'],
+    liveLink: 'https://note-app-seven-chi.vercel.app/',
+    githubLink: 'https://github.com/satheem/Note-App',
   },
-    {
-    name: 'Portfolio Website',
-    description: 'My personal developer portfolio to showcase my skills and projects. Designed with a sleek, modern dark theme and smooth animations.',
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    image: 'https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=1920',
-    liveLink: '#',
-    githubLink: 'https://github.com/satheem',
+  {
+    name: 'Task Manager',
+    icon: React.createElement(CheckSquare, { className: 'w-8 h-8 text-[#FF8533]' }),
+    description: 'A task manager application to efficiently create, edit, and organize tasks, helping users stay productive and focused.',
+    techStack: ['React', 'Vite'],
+    liveLink: 'https://task-manager-react-brown.vercel.app/',
+    githubLink: 'https://github.com/satheem/taskManager-React',
   },
+  {
+    name: 'Video Script Writer (AI Tool)',
+    icon: React.createElement(Bot, { className: 'w-8 h-8 text-[#FF8533]' }),
+    description: 'An AI-powered video script generator utilizing the Google Gemini API to help creators produce engaging content faster.',
+    techStack: ['React', 'Node.js', 'Express.js', 'Gemini AI', 'MUI'],
+    liveLink: 'https://video-script-writer-two.vercel.app/',
+    githubLink: 'https://github.com/satheem/video-script-writer',
+  },
+  {
+    name: 'Al-Aqsa National School Website',
+    icon: React.createElement(School, { className: 'w-8 h-8 text-[#FF8533]' }),
+    description: 'The official school website featuring a content management system (CMS), a student management system to publish term results online, and a comprehensive information hub.',
+    techStack: ['PHP', 'MySQL', 'HTML', 'CSS', 'JS'],
+    liveLink: 'http://www.alaqsans.com',
+  },
+];
+
+export const OTHER_PROJECTS: OtherProject[] = [
+    { name: 'E-Commerce Landing Page', liveLink: 'https://satheem.github.io/e-commerce-site/', githubLink: 'https://github.com/satheem/e-commerce-site' },
+    { name: 'Counter App', liveLink: 'https://satheem.github.io/counter-app-js/', githubLink: 'https://github.com/satheem/counter-app-js?tab=readme-ov-file' },
+    { name: 'Writings.dev Clone', liveLink: 'https://satheem.github.io/writings.dev/', githubLink: 'https://github.com/satheem/writings.dev' },
+    { name: 'Landing Page Template', liveLink: 'https://satheem.github.io/landing-page/', githubLink: 'https://github.com/satheem/landing-page' },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
