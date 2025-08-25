@@ -179,7 +179,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
           <a
             href="/resume.pdf"
             download
-            className="group inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-[#FF6B00] rounded-full transition-all duration-300 hover:bg-[#FF8533] w-full sm:w-auto"
+            className="group inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-[#FF6B00] to-[#FF8533] rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,107,0,0.5)] w-full sm:w-auto"
             data-cursor-hoverable
           >
             <Download className="w-5 h-5 mr-2" />

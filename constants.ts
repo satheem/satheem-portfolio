@@ -10,6 +10,7 @@ import {
   CheckSquare,
   Bot,
   School,
+  Building2,
 } from 'lucide-react';
 
 export const SKILL_CATEGORIES: { [key: string]: Skill[] } = {
@@ -78,6 +79,13 @@ export const FEATURED_PROJECTS: Project[] = [
     description: 'The official school website featuring a content management system (CMS), a student management system to publish term results online, and a comprehensive information hub.',
     techStack: ['PHP', 'MySQL', 'HTML', 'CSS', 'JS'],
     liveLink: 'http://www.alaqsans.com',
+  },
+  {
+    name: 'C4Everything Company Website',
+    icon: React.createElement(Building2, { className: 'w-8 h-8 text-[#FF8533]' }),
+    description: 'Developed the official company website, serving as the primary digital presence and information hub for their services.',
+    techStack: ['PHP', 'MySQL', 'HTML', 'CSS', 'JS'],
+    liveLink: 'http://www.c4everything.com',
   },
 ];
 

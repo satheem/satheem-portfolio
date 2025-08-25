@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import type { Project } from '../types';
@@ -43,7 +44,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             href={project.githubLink}
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-white/10 rounded-lg transition-all duration-300 hover:bg-white/20 hover:text-white hover:shadow-[0_0_15px_rgba(255,107,0,0.5)]"
+            className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white border border-white/30 rounded-lg transition-all duration-300 hover:border-[#FF8533] hover:text-[#FF8533]"
             data-cursor-hoverable
             aria-label={`GitHub for ${project.name}`}
             title="GitHub Repository"
@@ -57,7 +58,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             href={project.liveLink}
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-[#FF6B00]/80 rounded-lg transition-all duration-300 hover:bg-[#FF6B00] hover:shadow-[0_0_15px_rgba(255,107,0,0.7)]"
+            className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#FF6B00] to-[#FF8533] rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,107,0,0.5)]"
             data-cursor-hoverable
             aria-label={`Live demo for ${project.name}`}
             title="Live Demo"

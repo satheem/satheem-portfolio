@@ -42,7 +42,7 @@ const About = ({ setActiveSection }: AboutProps) => {
           <p>
             I’m Satheem Muwaffaq, a passionate full stack developer who enjoys building scalable web apps. 
             With experience in frontend and backend, I focus on creating seamless user experiences with 
-            clean, efficient code. One of my notable professional works includes developing the official website for <a href="http://www.c4everything.com" target="_blank" rel="noopener noreferrer" className="text-[#FF8533] hover:underline" data-cursor-hoverable>C4Everything</a>.
+            clean, efficient code. I'm dedicated to bringing ideas to life through technology.
           </p>
         </motion.div>
       </div>

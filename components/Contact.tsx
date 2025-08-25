@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Section from './Section';
 import { SOCIAL_LINKS } from '../constants';
@@ -17,7 +18,7 @@ const Contact = ({ setActiveSection }: ContactProps) => {
         <motion.a
           href="mailto:satheem511@gmail.com"
           className="inline-block bg-gradient-to-r from-[#FF6B00] to-[#FF8533] text-white font-bold text-lg px-8 py-4 rounded-full"
-          whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(255, 107, 0, 0.6)' }}
+          whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(255, 107, 0, 0.5)' }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: 'spring', stiffness: 300, damping: 15 }}
           data-cursor-hoverable
