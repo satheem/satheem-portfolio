@@ -178,7 +178,7 @@ const Hero = ({ setActiveSection }: HeroProps) => {
 
         <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-4 pt-4">
           <a
-            href="/Satheem_Muwaffaq_Developer.pdf"
+            href="https://drive.google.com/uc?export=download&id=11znmIwu90JWvTBJn_IoC3vTfogl-HyoY"
             download
             className="group inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-[#FF6B00] to-[#FF8533] rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,107,0,0.5)] w-full sm:w-auto"
             data-cursor-hoverable
